@@ -3,6 +3,7 @@ import Navlinks from './Navlinks'
 import logo from "./images/logo.jpeg"
 
 function NavBar({data, onPortalClick}) {
+  let title = data ? data.name : "uniSoft-Exam-Elevator"
   return (
     <>
       <div className="navBar">
@@ -11,7 +12,7 @@ function NavBar({data, onPortalClick}) {
         </div>
         <div className="institute_info">
             <div className="institute_title">
-                <h1 className='title'>{data.name || "uniSoft Exam Elevator"}</h1>
+                <h1 className='title'>{title}</h1>
                 <p className='salogan'>{data.about}</p>
             </div>
         </div>

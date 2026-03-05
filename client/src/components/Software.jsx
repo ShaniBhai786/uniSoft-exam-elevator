@@ -3,7 +3,7 @@ import SideMenu from './SideMenu'
 import Body from './Body'
 import { Outlet, useLocation } from 'react-router-dom'
 
-function Software() {
+function Software() { 
   const location = useLocation()
   const data = location.state?.data || JSON.parse(localStorage.getItem("instituteData"))
   return (

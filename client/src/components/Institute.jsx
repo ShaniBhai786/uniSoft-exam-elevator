@@ -29,7 +29,7 @@ function Institute() {
 
   return (
     <div className="institute">
-        <NavBar data={data} />
+        {/* <NavBar data={data} /> */}
         <Outlet />
         {/* <Link to="user-auth"><button className="btnLoginSignUp" ><FontAwesomeIcon icon={faRightToBracket} />Login/SignUp</button></Link> */}
         {/* <Software /> */}

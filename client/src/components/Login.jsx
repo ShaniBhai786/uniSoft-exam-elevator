@@ -46,14 +46,6 @@ function Login({onSwitch}) {
                 setDisplay(true)
                 localStorage.setItem("instituteData", JSON.stringify(response.data.data.institute));
                 navigate("/institute");
-
-                // navigate("/institute",
-                //     {
-                //         state: {
-                //         data: response.data.data.institute
-                //     }
-                //     }
-                // )
                 setLoading(false)
             },2000)
         }).catch((error) => {
