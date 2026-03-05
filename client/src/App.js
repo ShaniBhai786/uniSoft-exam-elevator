@@ -23,13 +23,17 @@ import Semester7 from './components/classes/bscs/semesters/Semester7';
 import Outline7 from './components/classes/bscs/outlines/Outline7';
 import PastPapers7 from './components/classes/bscs/pastpapers/PastPapers7';
 import SavedPapers from './components/SavedPapers';
+import NavBar from './components/NavBar';
+import { data } from 'react-router-dom';
+
 function App() {
-  
     const [display, setDisplay] = useState(false)
     const [show, setShow] = useState(true)
+    
   return (
     <>
     <Router>
+      <NavBar data={data} />
       <Routes>
         <Route path='/' element={<MainPage />} />
         <Route path='/institute' exact element={<Institute />} >
@@ -58,12 +62,12 @@ function App() {
         <Route path='user-auth' element={show ? (display ? <UserRegistration onSwitch={() => setDisplay(false)} /> : <UserLogin onSwitch={() => setDisplay(true)} />) : null} />
             <Route path='portal' element={<Portal />} >
             </Route>
-          <Route path='about' element={<About/>} />
-          <Route path='admin-tools' element={<AdminPanel />} >
+        </Route>
+        <Route path='/about' element={<About/>} />
+          <Route path='/admin-tools' element={<AdminPanel />} >
             <Route path='students list' element={<StudentsList />} />
             <Route path=''/>
           </Route>
-        </Route>
         <Route path='*' element={<h1>Not Found</h1>} />
       </Routes>
     </Router>
