@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import Physics from "./Physics";
 
 function About() {
   const [inputValue, setInputValue] = useState("");

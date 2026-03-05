@@ -22,6 +22,7 @@ import SelefSelect from './components/classes/bscs/paperComponents/SelefSelect';
 import Semester7 from './components/classes/bscs/semesters/Semester7';
 import Outline7 from './components/classes/bscs/outlines/Outline7';
 import PastPapers7 from './components/classes/bscs/pastpapers/PastPapers7';
+import SavedPapers from './components/SavedPapers';
 function App() {
   
     const [display, setDisplay] = useState(false)
@@ -33,6 +34,7 @@ function App() {
         <Route path='/' element={<MainPage />} />
         <Route path='/institute' exact element={<Institute />} >
         <Route path='software' element={<Software />}>
+        <Route path='saved-items' element={<SavedPapers/>} />
           <Route path='class9th' element={<Class9th/>}>
           <Route path='English' element={<English/>} />
           <Route path='Physics' element={<Physics/>} />

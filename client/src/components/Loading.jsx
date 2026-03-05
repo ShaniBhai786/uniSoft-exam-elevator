@@ -1,5 +1,5 @@
 import React from 'react'
-import logo from "./logo.jpeg"
+import logo from "./images/logo.jpeg"
 
 function Loading() {
   return (

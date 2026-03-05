@@ -1,6 +1,5 @@
 import React from 'react'
-import logo from './logo.jpeg'
-import McqsFormat from './McqsFormat'
+import logo from './images/logo.jpeg'
 import DataContainer from './books/class9th/DataContainer'
 import { useLocation } from 'react-router-dom';
 import axios from "axios"

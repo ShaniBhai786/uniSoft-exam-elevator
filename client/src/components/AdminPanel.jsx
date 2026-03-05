@@ -1,7 +1,5 @@
 import React from 'react'
 import { Link, Outlet } from "react-router-dom"
-import Test from './Test'
-import Physics from './Physics'
 
 function AdminPanel() {
   return (

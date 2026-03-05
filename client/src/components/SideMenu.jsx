@@ -30,7 +30,7 @@ function SideMenu() {
             <h3>UNISOFT EXAM ELEVATOR</h3>
             <div className="links-div">
                 <Link to=""className='software-links'>Generate Paper</Link>
-                <Link to=""className='software-links'>Saved Papers</Link>
+                <Link to="saved-items"className='software-links'>Saved Papers</Link>
                 <Link to=""className='software-links'>Settings</Link>
                 <Link className='software-links' onClick={logOut}>LogOut</Link>
             </div>

@@ -1,10 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import class9 from "./class9th.png"
-import class10 from './class10th.png'
-import class11 from './class11th.png'
-import class12 from './class12th.png'
-import bscs from './bscs.png'
+import class9 from "./images/class9th.png"
+import class10 from './images/class10th.png'
+import class11 from './images/class11th.png'
+import class12 from './images/class12th.png'
+import bscs from './images/bscs.png'
 
 function Body({data}) {
   return (
