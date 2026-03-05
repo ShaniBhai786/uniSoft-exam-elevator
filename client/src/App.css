@@ -9,7 +9,7 @@
   display: flex;
   position: absolute;
   width: 100%;
-  height: 100vh;
+  height: 100dvh;
   background-color: cadetblue;
   flex-direction: column;
   justify-content: center;
@@ -208,7 +208,7 @@
   display: flex;
   position: absolute;
   width: 100%;
-  height: 100vh;
+  height: 100dvh;
   justify-content: flex-start;
   align-items: center;
   background-color: aliceblue;
@@ -357,7 +357,7 @@
   display: flex;
   position: fixed;
   width: 100%;
-  height: 100vh;
+  height: 100dvh;
   justify-content: center;
   align-items: center;
   background-color: rgba(0, 0, 0, 0.895);
@@ -691,7 +691,7 @@ table tbody tr td{
   display: flex;
   position: relative;
   width: 50%;
-  height: 100vh;
+  height: 100dvh;
   background-color: rgb(34, 139, 134);
   z-index: 1111;
   align-items: center;
@@ -718,7 +718,7 @@ table tbody tr td{
 .mcqsContainer {
   padding: 20px;
   background: linear-gradient(135deg, #0f172a, #020617);
-  min-height: 100vh;
+  min-height: 100dvh;
   color: #e5e7eb;
   font-family: 'Segoe UI', sans-serif;
 }
@@ -827,7 +827,7 @@ table tbody tr td{
   display: flex;
   position: relative;
   width: 100%;
-  height: 100vh;
+  height: 100dvh;
   background-color: #020617;
 }
 .body{
@@ -925,7 +925,7 @@ table tbody tr td{
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: calc(100vh - 12%);
+  height: calc(100dvh - 12%);
   font-size: 25px;
   color: white;
   flex-direction: column;
@@ -984,7 +984,7 @@ table tbody tr td{
   width: calc(100% - 15rem);
   /* width: 100%; */
   background-color: #a1b0d4;
-  height: calc(100vh - 15vh);
+  height: calc(100dvh - 15vh);
   right: 0;
   flex-wrap: wrap;
   justify-content: center;
@@ -1049,7 +1049,7 @@ table tbody tr td{
   display: flex;
   position: absolute;
   width: 100%;
-  height: 100vh;
+  height: 100dvh;
   background-color: rgba(255, 255, 255, 0.8);
   justify-content: flex-start;
   align-items: center;
