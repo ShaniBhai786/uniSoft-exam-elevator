@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+
 import MainPage from './components/MainPage';
 import Portal from './components/Portal';
 import Institute from './components/Institute';
@@ -24,55 +25,94 @@ import Outline7 from './components/classes/bscs/outlines/Outline7';
 import PastPapers7 from './components/classes/bscs/pastpapers/PastPapers7';
 import SavedPapers from './components/SavedPapers';
 import NavBar from './components/NavBar';
-import { data } from 'react-router-dom';
 
-function App() {
-    const [display, setDisplay] = useState(false)
-    const [show, setShow] = useState(true)
-    
+function AppRoutes() {
+
+  const [display, setDisplay] = useState(false)
+  const [show, setShow] = useState(true)
+
+  const location = useLocation()
+
+  const data =
+    location.state?.data ||
+    JSON.parse(localStorage.getItem("instituteData"));
+
+  if (!data) {
+    return <h2>No Institute Data Available</h2>
+  }
+
   return (
     <>
-    <Router>
       <NavBar data={data} />
+
       <Routes>
         <Route path='/' element={<MainPage />} />
-        <Route path='/institute' exact element={<Institute />} >
-        <Route path='software' element={<Software />}>
-        <Route path='saved-items' element={<SavedPapers/>} />
-          <Route path='class9th' element={<Class9th/>}>
-          <Route path='English' element={<English/>} />
-          <Route path='Physics' element={<Physics/>} />
-          <Route path='Computer' element={<Computer />} />
-          </Route>
-          <Route path='bscs' element={<Bscs/>} >
-          <Route path='semester1' element={<Semester1/>} >
-          <Route path='random-select' element={<RandomSelect />} />
-          <Route path='self-select' element={<SelefSelect />} />
-          </Route>
-          <Route path='semester2' element={<Semester2/>} >
-          <Route path='random-select' element={<RandomSelect />} />
-          <Route path='self-select' element={<SelefSelect />} />
-          </Route>
-          <Route path='semester7' element={<Semester7/>}>
-          <Route path='outline7th' element={<Outline7 />} />
-          <Route path='pastpapers7th' element={<PastPapers7 />}/>
-          </Route>
-          </Route>
-        </Route>
-        <Route path='user-auth' element={show ? (display ? <UserRegistration onSwitch={() => setDisplay(false)} /> : <UserLogin onSwitch={() => setDisplay(true)} />) : null} />
-            <Route path='portal' element={<Portal />} >
+
+        <Route path='/institute' element={<Institute />} >
+          <Route path='software' element={<Software />}>
+
+            <Route path='saved-items' element={<SavedPapers />} />
+
+            <Route path='class9th' element={<Class9th />} >
+              <Route path='English' element={<English />} />
+              <Route path='Physics' element={<Physics />} />
+              <Route path='Computer' element={<Computer />} />
             </Route>
-        </Route>
-        <Route path='/about' element={<About/>} />
-          <Route path='/admin-tools' element={<AdminPanel />} >
-            <Route path='students list' element={<StudentsList />} />
-            <Route path=''/>
+
+            <Route path='bscs' element={<Bscs />} >
+              <Route path='semester1' element={<Semester1 />} >
+                <Route path='random-select' element={<RandomSelect />} />
+                <Route path='self-select' element={<SelefSelect />} />
+              </Route>
+
+              <Route path='semester2' element={<Semester2 />} >
+                <Route path='random-select' element={<RandomSelect />} />
+                <Route path='self-select' element={<SelefSelect />} />
+              </Route>
+
+              <Route path='semester7' element={<Semester7 />} >
+                <Route path='outline7th' element={<Outline7 />} />
+                <Route path='pastpapers7th' element={<PastPapers7 />} />
+              </Route>
+            </Route>
+
           </Route>
+
+          <Route
+            path='user-auth'
+            element={
+              show
+                ? (display
+                  ? <UserRegistration onSwitch={() => setDisplay(false)} />
+                  : <UserLogin onSwitch={() => setDisplay(true)} />
+                )
+                : null
+            }
+          />
+
+          <Route path='portal' element={<Portal />} />
+
+        </Route>
+
+        <Route path='/about' element={<About />} />
+
+        <Route path='/admin-tools' element={<AdminPanel />} >
+          <Route path='students-list' element={<StudentsList />} />
+        </Route>
+
         <Route path='*' element={<h1>Not Found</h1>} />
+
       </Routes>
-    </Router>
     </>
-  );
+  )
+}
+
+function App() {
+  return (
+    <Router>
+      <AppRoutes />
+    </Router>
+  )
 }
 
 export default App;
