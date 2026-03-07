@@ -33,15 +33,9 @@ function AppRoutes() {
 
   const location = useLocation()
 
-  const data =
-    location.state?.data ||
-    JSON.parse(localStorage.getItem("instituteData"));
+  const data = location.state?.data || "uniSoft-Exam-Elevator"
 
-  if (!data) {
-    return <h2>No Institute Data Available</h2>
-  }
-
-  return (
+   return (
     <>
       <NavBar data={data} />
 
@@ -90,9 +84,9 @@ function AppRoutes() {
             }
           />
 
-          <Route path='portal' element={<Portal />} />
 
         </Route>
+          <Route path='/portal' element={<Portal />} />
 
         <Route path='/about' element={<About />} />
 
@@ -100,7 +94,7 @@ function AppRoutes() {
           <Route path='students-list' element={<StudentsList />} />
         </Route>
 
-        <Route path='*' element={<h1>Not Found</h1>} />
+        <Route path='*' element={<h1>Oops! Not Found</h1>} />
 
       </Routes>
     </>

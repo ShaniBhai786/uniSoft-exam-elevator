@@ -7,7 +7,7 @@ function AdminPanel() {
      <div className="container">
         <h1>Admin Panel</h1>
         <div className="tools">
-            <Link to="students list" className='servicesLinks'>Students List</Link>
+            <Link to="students-list" className='servicesLinks'>Students List</Link>
             <Link to="fee" className='servicesLinks'>Fee Submission</Link>
             <Link to="results" className='servicesLinks'>Results</Link>
         </div>
