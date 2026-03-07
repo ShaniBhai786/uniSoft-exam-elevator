@@ -14,6 +14,7 @@ function SideMenu() {
         setTimeout(() => {
           console.log(res.data);
           window.location.assign("/")
+          localStorage.removeItem("instituteData")
           setLoading(false)
         }, 3000)
       })

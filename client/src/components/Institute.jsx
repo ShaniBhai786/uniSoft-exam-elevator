@@ -1,5 +1,4 @@
 import React, {useState, useRef} from 'react'
-import NavBar from './NavBar'
 import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faRightToBracket } from "@fortawesome/free-solid-svg-icons";
@@ -11,7 +10,7 @@ function Institute() {
   const [display, setDisplay] = useState(true) 
  
   const location = useLocation()
-  const data = location.state?.data || JSON.parse(localStorage.getItem("instituteData"));
+  const data = location.state?.data || JSON.parse(localStorage.getItem("instituteData")) || "uni";
 
   const title = document.querySelector(".title")
   title.innerHTML = data ? data.name : "uniSoft Test Solutions"

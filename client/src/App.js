@@ -32,8 +32,8 @@ function AppRoutes() {
   const [show, setShow] = useState(true)
 
   const location = useLocation()
-
-  const data = location.state?.data || "uniSoft-Exam-Elevator"
+  const data = location.state?.data || JSON.parse(localStorage.getItem("instituteData")) || "unisoft exam elevator";
+ 
 
    return (
     <>
@@ -41,12 +41,9 @@ function AppRoutes() {
 
       <Routes>
         <Route path='/' element={<MainPage />} />
-
         <Route path='/institute' element={<Institute />} >
           <Route path='software' element={<Software />}>
-
             <Route path='saved-items' element={<SavedPapers />} />
-
             <Route path='class9th' element={<Class9th />} >
               <Route path='English' element={<English />} />
               <Route path='Physics' element={<Physics />} />
@@ -83,19 +80,14 @@ function AppRoutes() {
                 : null
             }
           />
-
-
         </Route>
           <Route path='/portal' element={<Portal />} />
-
-        <Route path='/about' element={<About />} />
-
+          <Route path='/about' element={<About />} />
         <Route path='/admin-tools' element={<AdminPanel />} >
           <Route path='students-list' element={<StudentsList />} />
         </Route>
 
         <Route path='*' element={<h1>Oops! Not Found</h1>} />
-
       </Routes>
     </>
   )
